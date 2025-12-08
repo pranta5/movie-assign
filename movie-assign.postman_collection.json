@@ -1,0 +1,529 @@
+{
+	"info": {
+		"_postman_id": "feebfa87-9c63-4656-87aa-9475994a376e",
+		"name": "movie-assign",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25974887"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bruce\",\r\n    \"email\": \"bruce@yopmail.com\",\r\n    \"phone\": \"6981084565\",\r\n    \"address\": \"Behala, Kolkata\",\r\n    \"password\": \"abcd1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"bruce@yopmail.com\",\r\n    \"password\": \"abcd1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movie",
+			"item": [
+				{
+					"name": "create-movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MzBlOWY4ODYwMGZhZjMxN2Q2OCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyNDI4OTY2LCJleHAiOjE3NjI0MzI1NjZ9.CgqpnIAn6XvmBYtEV1vT7YO635dHfQpnMOB66F_kmuo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Avatar: The Way of Water",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Fantasy",
+									"type": "text"
+								},
+								{
+									"key": "language",
+									"value": "English",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "2h 20m",
+									"type": "text"
+								},
+								{
+									"key": "movieImage",
+									"type": "file",
+									"src": "/C:/Users/Agnibrata Shee/Pictures/Screenshots/Screenshot 2023-12-31 210422.png"
+								},
+								{
+									"key": "cast",
+									"value": "[\"Sam Worthington\",\"Zoe Saldaña\",\"Sigourney Weaver\"]",
+									"type": "text"
+								},
+								{
+									"key": "director",
+									"value": "James Cameron",
+									"type": "text"
+								},
+								{
+									"key": "releaseDate",
+									"value": "2022-12-16",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/movie/create-movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movie",
+								"create-movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-movies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MmQ4OWY4ODYwMGZhZjMxN2Q2MiIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjQ0MjE3MCwiZXhwIjoxNzYyNDQ1NzcwfQ.p8h4sQ7wHBiWpvDF99As9hHzBVYGKtn_tF61NFscc5I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/movie/get-movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"movie",
+								"get-movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-movie-single",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MmQ4OWY4ODYwMGZhZjMxN2Q2MiIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjQ0MjE3MCwiZXhwIjoxNzYyNDQ1NzcwfQ.p8h4sQ7wHBiWpvDF99As9hHzBVYGKtn_tF61NFscc5I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/movie/getmovie/69370176971d2f55a09eada7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzZmZmM3OTcxZDJmNTVhMDllYWRhMSIsImVtYWlsIjoidXNlcjIyQHlvcG1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzY1MjEyNTAwLCJleHAiOjE3NjUyMTYxMDB9.PUhnm44ZdxWp5rOYNZWFU9Mj_xs0BfkKTIVMBhkE2wY",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"movie",
+								"getmovie",
+								"69370176971d2f55a09eada7"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzZmZmM3OTcxZDJmNTVhMDllYWRhMSIsImVtYWlsIjoidXNlcjIyQHlvcG1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzY1MjEyNTAwLCJleHAiOjE3NjUyMTYxMDB9.PUhnm44ZdxWp5rOYNZWFU9Mj_xs0BfkKTIVMBhkE2wY"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "theater",
+			"item": [
+				{
+					"name": "createtheatre",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MzBlOWY4ODYwMGZhZjMxN2Q2OCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyNDI4OTY2LCJleHAiOjE3NjI0MzI1NjZ9.CgqpnIAn6XvmBYtEV1vT7YO635dHfQpnMOB66F_kmuo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Inox Forum Mall\",\r\n  \"location\": \"Bangalore\",\r\n  \"numberOfScreens\": 4,\r\n  \"assignedMovies\": [\r\n    {\r\n      \"movieId\": \"690c8ad5751facd3d5014805\",\r\n      \"screenNumber\": 1,\r\n      \"showTimings\": [\"10:00 AM\", \"2:30 PM\", \"7:00 PM\"],\r\n      \"totalSeats\": 150,\r\n      \"availableSeats\": 150\r\n    },\r\n    {\r\n      \"movieId\": \"690c8b63751facd3d5014807\",\r\n      \"screenNumber\": 2,\r\n      \"showTimings\": [\"11:30 AM\", \"5:00 PM\", \"9:00 PM\"],\r\n      \"totalSeats\": 120,\r\n      \"availableSeats\": 120\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/theatre/create-theatre",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"theatre",
+								"create-theatre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-theaters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MmQ4OWY4ODYwMGZhZjMxN2Q2MiIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjQ0MjE3MCwiZXhwIjoxNzYyNDQ1NzcwfQ.p8h4sQ7wHBiWpvDF99As9hHzBVYGKtn_tF61NFscc5I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/theatre/get-theatres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"theatre",
+								"get-theatres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign-movies",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MzBlOWY4ODYwMGZhZjMxN2Q2OCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyNDMzMTA0LCJleHAiOjE3NjI0MzY3MDR9.vcjTCId6HEo__dgjECNvoG2dYMBc-P_ZZ57AkYJQzag",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"assignedMovies\": [\r\n    {\r\n      \"movieId\": \"693701b0971d2f55a09eada9\",\r\n      \"screenNumber\": 1,\r\n      \"showTimings\": [ \"2:00 PM\", \"8:00 PM\"],\r\n      \"totalSeats\": 100,\r\n      \"availableSeats\": 100\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/theater/assignmovies/69370347b636e5e2995bc8a8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzZmZmM3OTcxZDJmNTVhMDllYWRhMSIsImVtYWlsIjoidXNlcjIyQHlvcG1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzY1MjEyNTAwLCJleHAiOjE3NjUyMTYxMDB9.PUhnm44ZdxWp5rOYNZWFU9Mj_xs0BfkKTIVMBhkE2wY",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"theater",
+								"assignmovies",
+								"69370347b636e5e2995bc8a8"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzZmZmM3OTcxZDJmNTVhMDllYWRhMSIsImVtYWlsIjoidXNlcjIyQHlvcG1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzY1MjEyNTAwLCJleHAiOjE3NjUyMTYxMDB9.PUhnm44ZdxWp5rOYNZWFU9Mj_xs0BfkKTIVMBhkE2wY"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MmQ4OWY4ODYwMGZhZjMxN2Q2MiIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjQ0MjE3MCwiZXhwIjoxNzYyNDQ1NzcwfQ.p8h4sQ7wHBiWpvDF99As9hHzBVYGKtn_tF61NFscc5I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"showTiming\": \"1:00 PM\",\r\n  \"numberOfTickets\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/booking/book/690c95cbb47ba508df890045/690c9383b47ba508df89003d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"booking",
+								"book",
+								"690c95cbb47ba508df890045",
+								"690c9383b47ba508df89003d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "total-bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MzBlOWY4ODYwMGZhZjMxN2Q2OCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyNTkwNzQ2LCJleHAiOjE3NjI1OTQzNDZ9.h-J9dQw7s6AyMw6Cx_2knNrn4P6TCsz6nxeS7Nx4t34",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/booking/movies/total-bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"booking",
+								"movies",
+								"total-bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "theater/bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MzBlOWY4ODYwMGZhZjMxN2Q2OCIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYyNTkwNzQ2LCJleHAiOjE3NjI1OTQzNDZ9.h-J9dQw7s6AyMw6Cx_2knNrn4P6TCsz6nxeS7Nx4t34",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/booking/theatre/690c9383b47ba508df89003d/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"booking",
+								"theatre",
+								"690c9383b47ba508df89003d",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MmQ4OWY4ODYwMGZhZjMxN2Q2MiIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjUxODEwNSwiZXhwIjoxNzYyNTIxNzA1fQ.zBW5TiAYOhhPj1SA6C_6XjwHx0G5ubkBpu6pri9fYwo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/booking/cancel/690cc0f9d3035eb296ff2d74",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"booking",
+								"cancel",
+								"690cc0f9d3035eb296ff2d74"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGM4MmQ4OWY4ODYwMGZhZjMxN2Q2MiIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjU5MDY2NiwiZXhwIjoxNzYyNTk0MjY2fQ.vQ_rK-pceEL5r5pLzQ7z2B5RJyS258w-5JarToD2LsI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/booking/history?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzcwNWJmYjYzNmU1ZTI5OTViYzhiNCIsImVtYWlsIjoidXNlcjIzQHlvcG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NjUyMTM2NzQsImV4cCI6MTc2NTIxNzI3NH0.n7sCkv6e2n4Li-GzjLjWHXOFnXt1jhd9I-5qYbQxc7g",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"booking",
+								"history"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzcwNWJmYjYzNmU1ZTI5OTViYzhiNCIsImVtYWlsIjoidXNlcjIzQHlvcG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NjUyMTM2NzQsImV4cCI6MTc2NTIxNzI3NH0.n7sCkv6e2n4Li-GzjLjWHXOFnXt1jhd9I-5qYbQxc7g"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get-profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bruce\",\r\n    \"email\": \"bruce@yopmail.com\",\r\n    \"phone\": \"6981084565\",\r\n    \"address\": \"Behala, Kolkata\",\r\n    \"password\": \"abcd1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/user/getprofile?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzZmZmM3OTcxZDJmNTVhMDllYWRhMSIsImVtYWlsIjoidXNlcjIyQHlvcG1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzY1MjEyNTAwLCJleHAiOjE3NjUyMTYxMDB9.PUhnm44ZdxWp5rOYNZWFU9Mj_xs0BfkKTIVMBhkE2wY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"getprofile"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzZmZmM3OTcxZDJmNTVhMDllYWRhMSIsImVtYWlsIjoidXNlcjIyQHlvcG1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzY1MjEyNTAwLCJleHAiOjE3NjUyMTYxMDB9.PUhnm44ZdxWp5rOYNZWFU9Mj_xs0BfkKTIVMBhkE2wY"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
