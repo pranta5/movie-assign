@@ -1,0 +1,1059 @@
+{
+	"info": {
+		"_postman_id": "df5828c4-c16f-46b1-97d3-9c40d2e49402",
+		"name": "travel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25974887"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"pranta\",\r\n    \"email\":\"sifivim799@aikunkun.com\",\r\n    \"password\":\"123456\",\r\n    \"phone\":\"7777777777\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sifivim799@aikunkun.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sifivim799@aikunkun.com\",\r\n    \"password\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend-verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sifivim799@aikunkun.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/auth/resend-verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"auth",
+								"resend-verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "email-verify",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sifivim799@aikunkun.com\",\r\n    \"password\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/auth/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTJjYTgxMDBlNjMwODdkZGYyMTEzMWYiLCJlbWFpbCI6Imxpa2FoYTQ5NDdAYmFkZmlzdC5jb20iLCJpYXQiOjE3NjQ1MzQyODgsImV4cCI6MTc2NDYyMDY4OH0.9mZctnSV_yTzRb80LcyHB6f26aDKt-uU2zqagW80vok",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"auth",
+								"verify-email"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTJjYTgxMDBlNjMwODdkZGYyMTEzMWYiLCJlbWFpbCI6Imxpa2FoYTQ5NDdAYmFkZmlzdC5jb20iLCJpYXQiOjE3NjQ1MzQyODgsImV4cCI6MTc2NDYyMDY4OH0.9mZctnSV_yTzRb80LcyHB6f26aDKt-uU2zqagW80vok"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sifivim799@aikunkun.com\",\r\n    \"password\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "role",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "package",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Manali Winter Special",
+									"type": "text"
+								},
+								{
+									"key": "overview",
+									"value": "5 Days 4 Nights adventure package",
+									"type": "text"
+								},
+								{
+									"key": "destination",
+									"value": "[\"Manali\",\"Kasol\",\"Tosh\"]",
+									"type": "text"
+								},
+								{
+									"key": "categoryAndPrice",
+									"value": "[{\"category\":\"standard\",\"price\":15000},{\"category\":\"deluxe\",\"price\":22000}]",
+									"type": "text"
+								},
+								{
+									"key": "itinerary",
+									"value": "[{\"day\":\"Day 1\",\"description\":\"Arrival & local sightseeing\"},{\"day\":\"Day 2\",\"description\":\"Solang Valley\"}]",
+									"type": "text"
+								},
+								{
+									"key": "activity",
+									"value": "[{\"activityName\":\"Trekking\"},{\"activityName\":\"Camping\"}]",
+									"type": "text"
+								},
+								{
+									"key": "featuredImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-5.jpg"
+								},
+								{
+									"key": "activityImages",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-3.jpg"
+								},
+								{
+									"key": "activityImages",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-1.jpg"
+								},
+								{
+									"key": "hotel",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/packages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"packages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Manali Winter Special",
+									"type": "text"
+								},
+								{
+									"key": "overview",
+									"value": "5 Days 4 Nights adventure package",
+									"type": "text"
+								},
+								{
+									"key": "destination",
+									"value": "[\"Manali\",\"Kasol\",\"Tosh\"]",
+									"type": "text"
+								},
+								{
+									"key": "categoryAndPrice",
+									"value": "[{\"category\":\"standard\",\"price\":15000},{\"category\":\"deluxe\",\"price\":22000}]",
+									"type": "text"
+								},
+								{
+									"key": "itinerary",
+									"value": "[{\"day\":\"Day 1\",\"description\":\"Arrival & local sightseeing\"},{\"day\":\"Day 2\",\"description\":\"Solang Valley\"}]",
+									"type": "text"
+								},
+								{
+									"key": "activity",
+									"value": "[{\"activityName\":\"Trekking\"},{\"activityName\":\"Camping\"}]",
+									"type": "text"
+								},
+								{
+									"key": "featuredImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-5.jpg"
+								},
+								{
+									"key": "activityImages",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-3.jpg"
+								},
+								{
+									"key": "activityImages",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-1.jpg"
+								},
+								{
+									"key": "hotel",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/packages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"packages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "slug",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Manali Winter Special",
+									"type": "text"
+								},
+								{
+									"key": "overview",
+									"value": "5 Days 4 Nights adventure package",
+									"type": "text"
+								},
+								{
+									"key": "destination",
+									"value": "[\"Manali\",\"Kasol\",\"Tosh\"]",
+									"type": "text"
+								},
+								{
+									"key": "categoryAndPrice",
+									"value": "[{\"category\":\"standard\",\"price\":15000},{\"category\":\"deluxe\",\"price\":22000}]",
+									"type": "text"
+								},
+								{
+									"key": "itinerary",
+									"value": "[{\"day\":\"Day 1\",\"description\":\"Arrival & local sightseeing\"},{\"day\":\"Day 2\",\"description\":\"Solang Valley\"}]",
+									"type": "text"
+								},
+								{
+									"key": "activity",
+									"value": "[{\"activityName\":\"Trekking\"},{\"activityName\":\"Camping\"}]",
+									"type": "text"
+								},
+								{
+									"key": "featuredImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-5.jpg"
+								},
+								{
+									"key": "activityImages",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-3.jpg"
+								},
+								{
+									"key": "activityImages",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-1.jpg"
+								},
+								{
+									"key": "hotel",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/packages/manali-winter-special",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"packages",
+								"manali-winter-special"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Manali Winter Special",
+									"type": "text"
+								},
+								{
+									"key": "overview",
+									"value": "5 Days 4 Nights adventure package",
+									"type": "text"
+								},
+								{
+									"key": "destination",
+									"value": "[\"Manali\",\"Kasol\",\"Tosh\"]",
+									"type": "text"
+								},
+								{
+									"key": "categoryAndPrice",
+									"value": "[{\"category\":\"standard\",\"price\":15000},{\"category\":\"deluxe\",\"price\":22000}]",
+									"type": "text"
+								},
+								{
+									"key": "itinerary",
+									"value": "[{\"day\":\"Day 1\",\"description\":\"Arrival & local sightseeing\"},{\"day\":\"Day 2\",\"description\":\"Solang Valley\"}]",
+									"type": "text"
+								},
+								{
+									"key": "activity",
+									"value": "[{\"activityName\":\"Trekking\"},{\"activityName\":\"Camping\"}]",
+									"type": "text"
+								},
+								{
+									"key": "featuredImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-5.jpg"
+								},
+								{
+									"key": "activityImages",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-3.jpg"
+								},
+								{
+									"key": "activityImages",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-1.jpg"
+								},
+								{
+									"key": "hotel",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/packages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"packages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/api/packages/6929e075c6a0ab8d1b401416?status=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"packages",
+								"6929e075c6a0ab8d1b401416"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hard-delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/api/packages/hard/6929e075c6a0ab8d1b401416",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"packages",
+								"hard",
+								"6929e075c6a0ab8d1b401416"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/api/packages/69328c5239ace4830f9953e3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"packages",
+								"69328c5239ace4830f9953e3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hotel",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hotelName",
+									"value": "himalayan sunrise",
+									"type": "text"
+								},
+								{
+									"key": "hotelImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-5.jpg"
+								},
+								{
+									"key": "hotelImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-4.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/hotels/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"hotels",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hotelName",
+									"value": "himalayan sunrise",
+									"type": "text"
+								},
+								{
+									"key": "hotelImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-5.jpg"
+								},
+								{
+									"key": "hotelImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-4.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/hotels/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"hotels",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hotelName",
+									"value": "sunrise ressort",
+									"type": "text"
+								},
+								{
+									"key": "hotelImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/About us (1).png"
+								},
+								{
+									"key": "hotelImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/hotels/6929fc60221495df8e2836e9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"hotels",
+								"6929fc60221495df8e2836e9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hotelName",
+									"value": "sunrise ressort",
+									"type": "text"
+								},
+								{
+									"key": "hotelImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/About us (1).png"
+								},
+								{
+									"key": "hotelImage",
+									"type": "file",
+									"src": "/C:/Users/prant/Downloads/about-masonary-1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/hotels/6929fc60221495df8e2836e9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"hotels",
+								"6929fc60221495df8e2836e9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"package\":\"6929da0878f228b5c4158ffd\",\r\n    \"totalTraveler\":5,\r\n    \"travelDate\":\"10-02-2026\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/booking/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"package\":\"6929da0878f228b5c4158ffd\",\r\n    \"totalTraveler\":5,\r\n    \"travelDate\":\"10-02-2026\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/booking/my",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"booking",
+								"my"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"package\":\"6929da0878f228b5c4158ffd\",\r\n    \"totalTraveler\":5,\r\n    \"travelDate\":\"10-02-2026\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/booking/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enquiry",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Rahul Sharma\",\r\n  \"email\": \"rahul@gmail.com\",\r\n  \"phone\": \"9876543210\",\r\n  \"noOfGuests\": 4,\r\n  \"checkInDate\": \"2025-12-1\",\r\n  \"checkOutDate\": \"2025-12-5\",\r\n  \"message\": \"Looking for family trip to Manali with deluxe rooms\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/enquiries/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"enquiries",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"followup\",\r\n    \"remark\":\"bust now\",\r\n    \"followUpDate\":\"2025-11-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/enquiries/692b26ff214288ca1a639621",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"enquiries",
+								"692b26ff214288ca1a639621"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "callback",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Priya Singh\",\r\n  \"phone\": \"9876543210\",\r\n  \"preferredTime\": \"2PM - 5PM\",\r\n  \"message\": \"Interested in Kashmir tour\",\r\n  \"source\": \"popup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/callback/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"callback",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chat",
+			"item": [
+				{
+					"name": "history",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"content\":\"hi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/chat/history/692afc008644445a6034e5ac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"chat",
+								"history",
+								"692afc008644445a6034e5ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "conversations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"content\":\"hi\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/chat/conversations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"chat",
+								"conversations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
